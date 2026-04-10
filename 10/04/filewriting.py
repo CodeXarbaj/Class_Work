@@ -1,12 +1,27 @@
+# program for writing data into the file
 
-with open("demo.txt", "w") as f:
-    lines = []
-    
-    for i in range(5):
-        sentence = input(f"Enter sentence {i+1}: ")
-        lines.append(sentence + "\n")
-    
-    f.writelines(lines)
+# opening file for write operation
+filev = open("firstfile.txt", "w")
 
-print("Done!")
-f.close()
+# blank list of sentences
+sentences = []
+
+# writing five sentences into the file
+print("Enter any five sentence : ")
+
+for x in range(5):
+    # input of data from user
+    sentence = input()
+    
+    # inserting the sentence into the list
+    sentences.append(sentence)
+    
+    print("-----------------------------")
+
+# writing data into the file
+filev.writelines(sentences)
+
+print("Data Successfully written")
+
+# closing the file
+filev.close()
