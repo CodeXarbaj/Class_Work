@@ -7,17 +7,13 @@
 #Close files
 #End
 
-f1 = open("file1.txt", "r")
-f2 = open("file2.txt", "r")
-out = open("merge.txt", "w")
+with open("file1.txt", "r") as f1:
+    with open("file2.txt", "r") as f2:
+        with open("merge.txt", "w") as out:
 
-lines = f1.readlines() + f2.readlines()
+            lines = f1.readlines() + f2.readlines()
 
-count = 1
-for line in lines:
-    out.write(str(count) + ". " + line)
-    count += 1
-
-f1.close()
-f2.close()
-out.close()
+            count = 1
+            for line in lines:
+                out.write(str(count) + ". " + line)
+                count += 1

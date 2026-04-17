@@ -10,26 +10,19 @@
 #For each word, check if it contains @ and .
 #If yes, write it into emails.txt
 
+# open source and destination file using with
+with open("data.txt", "r") as source:
+    with open("emails.txt", "w") as destination:
 
-# open source file
-source = open("data.txt", "r")
+        # read content
+        text = source.read()
 
-# open destination file
-destination = open("emails.txt", "w")
+        # split words
+        words = text.split()
 
-# read content
-text = source.read()
-
-# split words
-words = text.split()
-
-for word in words:
-    # simple check for email
-    if "@" in word and "." in word:
-        # clean common punctuation
-        word = word.strip(",.!?()[]{}")
-        destination.write(word + "\n")
-
-# close files
-source.close()
-destination.close()
+        for word in words:
+            # simple check for email
+            if "@" in word and "." in word:
+                # clean common punctuation
+                word = word.strip(",.!?()[]{}")
+                destination.write(word + "\n")

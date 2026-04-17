@@ -8,16 +8,14 @@
 #Store longest line
 #Print result
 ##End
-f = open("data.txt", "r")
 
-longest = ""
+with open("data.txt", "r") as f:
 
-for line in f:
-    if len(line) > len(longest):
-        longest = line
+    longest = ""
 
-print("Longest Line:", longest)
-print("Length:", len(longest))
+    for line in f:
+        if len(line) > len(longest):
+            longest = line
 
-f.close()
-🧠 Short Algo
+    print("Longest Line:", longest)
+    print("Length:", len(longest))
