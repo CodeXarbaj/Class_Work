@@ -20,3 +20,16 @@ print("Substraction of two dimentional array")
 arraysub = np.subtract(array1,array2)       #Using sunstract function for calculating diffrence of two array
 print(arraysub)
 
+print("---------------------------------------------------------")
+
+import numpy as np
+
+A = np.array([[1, 2],
+              [3, 4]])
+
+B = np.array([[5, 6],
+              [7, 8]])
+
+result = A @ B                        #Using @ for matrix multiplication
+
+print(result)
